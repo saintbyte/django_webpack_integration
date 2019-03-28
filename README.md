@@ -25,6 +25,7 @@ pip install git+https://github.com/saintbyte/django_webpack_integration
 4. В webpack.config.js webpack-dev-server настраиваем примерно так:
 4.1 в начале добавлем 
 ```
+const path = require('path');
 const fs = require('fs');
 var rawdata = fs.readFileSync('django.json');
 var django = JSON.parse(rawdata);
@@ -32,12 +33,18 @@ var django = JSON.parse(rawdata);
 не волнуйтесь за django.json - он будет создан автоматическии 
 4.2 в основном конфиге webpack добавляем примерно такое:
 ```
-    devServer: {
-        contentBase: [path.join(__dirname, 'dist')].concat(django['static_dirs']),
+ devServer: {
+        contentBase: [path.join(__dirname, 'dist'), __dirname].concat(django['static_dirs']),
         compress: true,
         clientLogLevel: 'info',
         port: 9000,
-        before: function (app, server) {}
+        before: function (app, server) {
+            app.use(function (req, res, next) {
+                res.header("Access-Control-Allow-Origin", "*");
+                res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+                next();
+            });
+        }
     }
 ```
  
