@@ -9,7 +9,7 @@
 но управлять конечно из джанги и небыло проблем со static из приложений django
 
 ### Установка
-
+pip install git+https://github.com/saintbyte/django_webpack_integration
 
 ### Настройка
 
