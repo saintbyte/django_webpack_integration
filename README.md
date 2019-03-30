@@ -23,6 +23,7 @@ pip install git+https://github.com/saintbyte/django_webpack_integration
  предварительно установие npm install --save-dev webpack-dev-server
 
 4. В webpack.config.js webpack-dev-server настраиваем примерно так:
+
 4.1 в начале добавлем 
 ```
 const path = require('path');
@@ -31,6 +32,7 @@ var rawdata = fs.readFileSync('django.json');
 var django = JSON.parse(rawdata);
 ```
 не волнуйтесь за django.json - он будет создан автоматическии 
+
 4.2 в основном конфиге webpack добавляем примерно такое:
 ```
  devServer: {
@@ -53,4 +55,6 @@ var django = JSON.parse(rawdata);
 
 5. В директории с проектом django запускаем  ./manage.py npm webpack-dev-server
      
-6. Добавить django.json в .gitignore     
+6. Добавить django.json в .gitignore
+
+7. Если надо для IDE то сделать из проекта на django симлинк static на директорию указанную в FRONTEND_DIR и добавить /static/ в .gitignore .
