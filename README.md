@@ -1,4 +1,6 @@
 #Django Webpack Integration
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsaintbyte%2Fdjango_webpack_integration.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsaintbyte%2Fdjango_webpack_integration?ref=badge_shield)
+
 
 ### Описание
 
@@ -58,3 +60,6 @@ var django = JSON.parse(rawdata);
 6. Добавить django.json в .gitignore
 
 7. Если надо для IDE то сделать из проекта на django симлинк static на директорию указанную в FRONTEND_DIR и добавить /static/ в .gitignore .
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsaintbyte%2Fdjango_webpack_integration.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsaintbyte%2Fdjango_webpack_integration?ref=badge_large)
